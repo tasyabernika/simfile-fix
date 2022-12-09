@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
-            AddFileSeeder::class,
-            BiodataSeeder::class
+            //AddFileSeeder::class,
+            //BiodataSeeder::class
         ]);
     }
 }

@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="assets/css/pages/simple-datatables.css" />
 
     <link rel="stylesheet" href="assets/css/shared/iconly.css" />
+    <link rel="stylesheet" href="assets/extensions/filepond/filepond.css" />
+    <link
+      rel="stylesheet"
+      href="assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/extensions/toastify-js/src/toastify.css"
+    />
+    <link rel="stylesheet" href="assets/css/pages/filepond.css" />
 </head>
 
 <body>
@@ -34,7 +44,7 @@
                                         <img src="assets/images/faces/1.jpg" alt="Avatar" />
                                     </div>
                                     <div class="text">
-                                        <h6 class="user-dropdown-name">John Ducky</h6>
+                                        <h6 class="user-dropdown-name"> {{ \Auth::user()->name ?? 'none'  }}</h6>
                                         <p class="user-dropdown-status text-sm text-muted">
                                             Member
                                         </p>
@@ -47,8 +57,14 @@
                                     <li>
                                         <hr class="dropdown-divider" />
                                     </li>
-                                    <li>
-                                        <a class="dropdown-item" href="auth-login.html">Logout</a>
+                                    <li class="dropdown-item">
+                                        <a class="sidebar-link" style="color: black" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Logout</span>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     </li>
                                 </ul>
                             </div>
@@ -64,13 +80,13 @@
                     <div class="container ">
                         <ul>
                             <li class="menu-item">
-                                <a href="index.html" class="menu-link">
+                                <a href="{{ url('/home') }}" class="menu-link">
                                     <span></i> Home</span>
                                 </a>
                             </li>
 
                             <li class="menu-item">
-                                <a href="index.html" class="menu-link">
+                                <a href="{{ url('/addfile') }}" class="menu-link">
                                     <span></i> Add File</span>
                                 </a>
                             </li>

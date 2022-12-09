@@ -21,7 +21,6 @@ class SifBiodata extends Model
     public function users() {
         return $this->hashOne(User::class);
     }
-
     // public function addfile() {
     //     return $this->hasMany(SifAddfile::class);
     // }

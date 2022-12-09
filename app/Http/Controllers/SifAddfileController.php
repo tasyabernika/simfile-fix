@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class SifAddfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,8 @@ class SifAddfileController extends Controller
      */
     public function index()
     {
-        return view('addfile.index');
+        $addfiles = SifAddfile::all();
+        return view('addfile.index', compact('addfiles'));
     }
 
     /**
@@ -35,7 +40,18 @@ class SifAddfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'judul_file'=> 'required',
+            'foto'=> 'required',
+        ]);
+        if ($request->file('foto')) {
+            $validateData['foto'] = $request->file('foto')->store('post-image');
+        }
+
+        SifAddfile::create($validateData);
+
+
+        return redirect()->back();
     }
 
     /**

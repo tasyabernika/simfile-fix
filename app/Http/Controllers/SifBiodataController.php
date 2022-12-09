@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\SifBiodata;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class SifBiodataController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,8 @@ class SifBiodataController extends Controller
      */
     public function index()
     {
-        return view('biodata.index');
+        $biodatas = SifBiodata::all();
+        return view('biodata.index', compact('biodatas'));
     }
 
     /**
@@ -24,7 +31,7 @@ class SifBiodataController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +42,28 @@ class SifBiodataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $this->validate($request, [
+            'nama',
+            'tempat',
+            'tanggal_lahir',
+            'no_telfon',
+            'daftar_suara'
+        ]);
+
+        $biodata = new SifBiodata();
+        $biodata->user_id = Auth::user()->id;
+        $biodata->nama = $request->nama;
+        $biodata->tempat = $request->tempat;
+        $biodata->tanggal_lahir = $request->tanggal_lahir;
+        $biodata->no_telfon = $request->no_telfon;
+        $biodata->daftar_suara = $request->daftar_suara;
+        $biodata->save();
+
+        // dd($biodata);
+
+        return redirect()->back();
+        
     }
 
     /**

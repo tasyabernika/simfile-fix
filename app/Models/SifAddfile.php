@@ -10,9 +10,8 @@ class SifAddfile extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'biodata_id',
-        'judul_file'
+        'judul_file',
+        'foto'
     ];
 
     public function users() {

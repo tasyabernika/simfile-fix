@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('sif_addfiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            // $table->foreignId('biodata_id')->constrained();
             $table->text('judul_file');
+            $table->string('foto');
             $table->timestamps();
         });
     }
