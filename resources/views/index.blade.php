@@ -3,8 +3,8 @@
 @section('main')
     <div class="card">
         <div class="card-header">
-            <h4>With Captions</h4>
-            <p>A carousel with captions over the top.</p>
+            <h4>Simfile</h4>
+            <p>Welcome To Simfile</p>
         </div>
         <div class="card-body">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -15,32 +15,20 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assets/images/samples/hello.jpeg" class="d-block w-100" alt="..." />
+                        <img src="assets/images/samples/hai.jpg" class="d-block w-100" alt="..." />
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
+                            <h5></h5>
                             <p>
-                                Nulla vitae elit libero, a pharetra augue mollis
-                                interdum.
+                                
                             </p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/samples/lo.jpeg" class="d-block w-100" alt="..." />
+                        <img src="assets/images/samples/dore.jpg" class="d-block w-100" alt="..." />
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
+                            <h5></h5>
                             <p>
-                                Nulla vitae elit libero, a pharetra augue mollis
-                                interdum.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/samples/hel.png" class="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>
-                                Nulla vitae elit libero, a pharetra augue mollis
-                                interdum.
+                               
                             </p>
                         </div>
                     </div>

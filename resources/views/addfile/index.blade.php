@@ -11,7 +11,7 @@
     <table class="table table-striped" id="table1">
         <thead>
             <tr>
-                <th> Judul File </th>
+                <th> Judul Foto </th>
                 <th> Foto </th>
                 <th> Action </th>
             </tr>
